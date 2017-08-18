@@ -10,11 +10,17 @@ Adam Langley got the ball rolling with his reviews [here](https://www.imperialvi
 *Review Author: Brad Hill*
 
 **Brand:** Yubico
+
 **Firmware:** Yubico
+
 **Chip:** NXP
+
 **Connection:** USB-A
+
 **Features:** U2F only
+
 **Price:** $18
+
 **Buy:** [Yubico Store](https://www.yubico.com/store/)
 
 Very reliable, from the co-originators of the technology.  Implements the specification faithfully, has a reliable attestation certificate, physically resilient.  Yubico devices are generally a good bet for corporate deployments where you want to check attestation to ensure that a real hardware device is being used, but also a solid general consumer choice.
@@ -34,11 +40,17 @@ If you're giving a U2F device to a non-technical person, I recommend this one ov
 *Review Author: AGL*
 
 **Brand:** Thetis
+
 **Firmware:** Excelsecu
+
 **Chip:** ?
+
 **Connection:** USB-A
+
 **Features:** U2F
+
 **Price:** $13.95
+
 **Buy:** [Amazon](https://www.amazon.com/Thetis-Universal-Authentication-Protection-SalesForce/dp/B06XHTKFH3/ref=sr_1_4?s=electronics&ie=UTF8&qid=1503019143&sr=1-4&keywords=U2F)
 
 This security key is fashioned more like a USB thumb drive. The plastic inner part rotates within the outer metal shell and so the USB connector can be protected by it. The button is in the axis and is clicky, rather than capacitive, but doesn't require too much force to press. If you'll be throwing your security key in bags and worry about damaging them then perhaps this one will work well for you.
@@ -49,11 +61,17 @@ A minor nit is that the attestation certificate is signed with SHA-1. That doesn
 
 ## Feitian ePass
 **Brand:** Feitian
+
 **Firmware:** Feitian
+
 **Chip:** NXP
+
 **Connection:** USB-A, NFC
+
 **Features:** U2F, OATH HOTP (USB only), CCID
+
 **Price:** $13.95
+
 **Buy:** [Amazon](https://www.amazon.com/Feitian-ePass-NFC-FIDO-Security/dp/B01M1R5LRD/ref=sr_1_5?s=electronics&ie=UTF8&qid=1503019143&sr=1-5&keywords=U2F)
 
 *Review Author: AGL*
@@ -70,11 +88,17 @@ The ePass I bought on Amazon works well over NFC, but the USB interface never wo
 
 ## Feitian MultiPass
 **Brand:** Feitian
+
 **Firmware:** Feitian
+
 **Chip:** ?
+
 **Connection:** USB-A, NFC, BLE 
+
 **Features:** U2F
+
 **Price:** $24.99
+
 **Buy:** [Amazon](https://www.amazon.com/Feitian-MultiPass-FIDO-Security-Key/dp/B01LYV6TQM/ref=sr_1_6?s=electronics&ie=UTF8&qid=1503019143&sr=1-6&keywords=U2F)
 
 *Review Author: Brad Hill*
@@ -96,11 +120,17 @@ I put this on a keychain when I bought it, expecting it to be my new "daily driv
 
 ## U2F Zero
 **Brand:** Conorco
+
 **Firmware:** Conor Patrick
+
 **Chip:** Atmel
+
 **Connection:** USB-A
+
 **Features:** U2F
+
 **Price:** $8.99
+
 **Buy:** [Amazon](https://www.amazon.com/U2F-Zero/dp/B01L9DUPK6)
 
 *Review Author: AGL*
@@ -119,11 +149,17 @@ A cool little device, and sturdier than it looks. I'm encouraged that they can s
 
 ## KEY-ID FIDO U2F Security Key
 **Brand:** KEY-ID
+
 **Firmware:** Feitian(?)
+
 **Chip:** ?
+
 **Connection:** USB-A
+
 **Features:** U2F
+
 **Price:** $9.95
+
 **Buy:** [Adafruit](https://www.adafruit.com/product/3363)
 
 *Review Author: AGL*
@@ -142,11 +178,17 @@ I've used and given away a number of these because of their attractive price poi
 
 ## HyperFIDO Mini
 **Brand:** HyperFIDO
+
 **Firmware:** Feitian(?)
+
 **Chip:** ?
+
 **Connection:** USB-A
+
 **Features:** U2F
+
 **Price:** $13.95
+
 **Buy:** [Amazon](https://www.amazon.com/HyperFIDO-Mini-U2F-Security-Key/dp/B01LZO0WE9)
 
 *Review Author: AGL*
@@ -159,11 +201,17 @@ However, it manages to be worse. The KEY-ID device is highlighted in Amazon as a
 
 ## HyperFIDO U2F Security Key
 **Brand:** HyperFIDO
+
 **Firmware:** Feitian(?)
+
 **Chip:** ?
+
 **Connection:** USB-A
+
 **Features:** U2F
+
 **Price:** $9.98
+
 **Buy:** [Amazon](https://www.amazon.com/HyperFido-K5-FIDO-U2F-Security/dp/B00WIX4JMC/ref=pd_bxgy_229_img_2?_encoding=UTF8&psc=1&refRID=Q4CAYP6B64ESGRPH5PG9)
 
 *Review Author: AGL*
