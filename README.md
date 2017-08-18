@@ -255,7 +255,7 @@ There is funny stuff going on with how the several of these I have present their
 
 *Review Author: Brad Hill*
 
-I've seen these mentioned a number of times and used in press photos.  They are printed in a 1mm-depth credit-card format which you punch out and fold over to form the key.  I have two from 2014, keepsakes of the FIDO plenary in Paris.  These don't haver a button, you must physically insert and remove the key every time.
+I've seen these mentioned a number of times and used in press photos.  They are printed in a 1mm-depth credit-card format which you punch out and fold over to form the key.  I have two from 2014, keepsakes of the FIDO plenary in Paris.  These don't have a button, you must physically insert and remove the key every time.
 
 The key I used sucessfully in my Chromebook at that time hasn't worked for several years now.  I don't know if that's due to protocol changes or manufacturing quality.  As much as I like the idea of keys cheap enough to give away, I'm not sure I'd recommend these, because the accounts you'll be protecting with them are quite valuable, and it would be a shame to be locked out because a $5 piece of cheap hardware failed.  At any rate, it doesn't seem that Plug-Up is still manufacturing these, so this is mostly a historical curiousity.
 
