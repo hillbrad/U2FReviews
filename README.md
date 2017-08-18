@@ -327,7 +327,7 @@ The Yubikey NEO is my "daily driver", attached to my badge lanyard and used ever
 
 # NFC-only Devices
 
-I have two card form-factor devices that do U2F over NFC only.  I really like them, but there are some important caveats I'll get to.  
+I have two card form factor devices that do U2F over NFC only.  I really like them, but there are some important caveats I'll get to.  
 
 Why do I like them?
 
@@ -374,7 +374,7 @@ The dual-interface cards are available blank and can be custom-printed. If you w
 
 **Firmware:** SurePassID
 
-**Chip:** ?
+**Chip:** ? (SurePassID also sells the "TapID Treo" that looks like a re-branded Feitian ePass, so maybe Feitian?)
 
 **Connection:** NFC
 
