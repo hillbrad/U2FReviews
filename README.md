@@ -1,7 +1,17 @@
 # U2FReviews
 Reviews of U2F devices
 
-Adam Langley got the ball rolling with his reviews [here](https://www.imperialviolet.org/2017/08/13/securitykeys.html), much of the content of which is reproduced here with his permission.  I've used a number of U2F devices Adam hasn't, and played around with NFC and Bluetooth Low Energy (BLE) connectivity, so at the request of some friends, here's an expanded set of reviews.  It's set up as a GitHub repo and I encourage you to submit PRs with reviews of devices you've used that aren't listed here. *-Brad*
+Adam Langley got the ball rolling with his reviews [here](https://www.imperialviolet.org/2017/08/13/securitykeys.html), much of the content of which is reproduced here with his permission.  I've used a number of U2F devices Adam hasn't, and played around with NFC and Bluetooth Low Energy (BLE) connectivity, as well as multifunction devices, so at the request of some friends here's an expanded set of reviews.  It's set up as a GitHub repo and I encourage you to submit PRs with reviews of devices you've used that aren't listed here. *-Brad*
+
+## *A note on multifunction devices*
+
+I love U2F and use it everywhere I can.  Unfortunately, that is very few places and, with a few exceptions, mostly only on Chrome on desktop computers.  I have more TOTP (aka 'code generator' / 'authenticator app' / OATH) credentials than U2F registrations, and I have a TOTP credential set up for every site where I have a U2F registration, for use where U2F isn't available.  For me, this means that the devices (the more expensive Yubico ones and the Fidesmo card) that support a hardware-based TOTP app on the same device are far more useful for an advanced user like myself who enables 2FA everywhere than is a U2F-only device. The ability to get these codes via NFC with the Yubico Authenticator app on Android is particularly convenient and secure.
+
+I am dilligent and always register my new seeds redundantly on two devices, so loss or failure of one doesn't leave me locked out, and I also keep a few of my most used seeds in the DUO app on iOS.  This strategy also makes moving between devices or getting a new phone a lot easier, since the most popular OATH apps don't have great backup/restore/export functionality.
+
+If you are a sophisticated user of two-factor auth, it is well worth spending the extra money to get TOTP functionality even if you don't plan to use any of the other SmartCard or PGP features.
+
+-------------
 
 ## Yubico U2F Security Key
 
@@ -312,3 +322,71 @@ The Yubico Authenticator App for Android [ [Google Play Store](https://play.goog
 The Yubikey NEO is my "daily driver", attached to my badge lanyard and used every day for several years.
 
 **Full Disclosure:** I have at various times received complimentary Yubico devices from both Yubico and Google.
+
+----------
+
+# NFC-only Devices
+
+I have two card form-factor devices that do U2F over NFC only.  I really like them, but there are some important caveats I'll get to.  
+
+Why do I like them?
+
+* Easy to carry. They are the same dimensions (even thickness) as a credit card.
+* Easy to use. The antenna in these devices is much more reliable than on the smaller form factor devices and often works without removing it from my wallet.  I keep my NFC buss pass on one side and my NFC U2F on the other side - NFC where # of cards >= 3 requires a higher-dimensionality wallet.
+* No batteries.
+* No additional registration process, moves seamlessly between devices.
+* Familiarity.  I have high hopes for these as mass-market devices if some of the deployment concerns below can be addressed.  People are very used to using proxcards for mass transit, building access, and are getting accustomed to NFC for payments.  They have reliable and established habits for where to put and how to take care of valuable cards.
+* Multi-use.  U2F can sit easily on top of standard SmartCard platforms that are ubiquitious and have a wide variety of other applications available, from transit passes to EMV payments and even bitcoin wallets.
+
+Caveats?
+
+* Android only, for now.  All iPhones have the necessary hardware and there are some moves towards opening APIs for NFC in iOS 11, so I hope this will bode well for the reach of NFC U2F.  It would also be nice to see NFC readers integrated into laptops, as it would be cheap and easy to do so.
+* Registration difficulties.  Currently only https://m.facebook.com/ (not the app) on Chrome on Android has mobile-specific support for registering an NFC U2F authenticator.  On GitHub, you can force browse to the desktop site and make it work if you can manage to read the itty-bitty type.  Google supports authenticating with NFC to your account natively in Android, but at the time of this writing, you can only add a new U2F device to your account using desktop Chrome, which only supports USB.  So, you can use NFC with a multi-attachment device like the YubiKey NEO or Feitian MultiPass that was registered over USB first, but you can't use one of the card devices below with your Google account.  I hope they will fix this soon.  These devices have or are available with smartcard chip physical interface, but I don't have compatible reader hardware to test if this can be used to bypass this registration difficulty.
+
+
+## Fidesmo Card (Editor's Choice)
+
+**Brand:** Fidesmo
+
+**Firmware:** Fidesmo
+
+**Chip:** ? (probably a standard JavaCard chip)
+
+**Connection:** NFC
+
+**Features:** U2F, TOTP, PGP, Bitcoin wallet, more
+
+**Price:** 10-15 EUR, plus additional for extra loadable apps 
+
+**Buy:** [Fidesmo Store](http://shop.fidesmo.com/)
+
+A great device at a great price. The Fidesmo card is standard JavaCard hardware with custom firmware on top and an app store for Android [ [Google Play Store](https://play.google.com/store/apps/details?id=com.fidesmo.sec.android) ] that allows loading various modules that can be used over NFC. (or, for a few Euros more, through the physical chip-card interface, but I haven't tried that)  I use the U2F and OTP applets, the latter of which is fully compatible with the Yubico Authenticator app for Android. There are also transit cards, a bitcoin wallet, a PGP app and more available, each for a few Euros.
+
+I keep this in my wallet and backup all my TOTP seeds to it, in addition to my YubiKey NEO. I really can't say enough good things about this device, I just wish NFC support were more widespread for my other important accounts beyond Facebook.
+
+The dual-interface cards are available blank and can be custom-printed. If you want a low-profile device for crossing a border, you might dress it up as a bus pass or similar.
+
+-------------
+
+## SurePassID TapID Card
+
+**Brand:** SurePassID
+
+**Firmware:** SurePassID
+
+**Chip:** ?
+
+**Connection:** NFC
+
+**Features:** U2F, more?
+
+**Price:** $19.95
+
+**Buy:** [Amazon](https://www.amazon.com/Account-Security-Android-Two-Factor-Authentication/dp/B01LY2PLOX/ref=sr_1_2?s=electronics&ie=UTF8&qid=1503093547&sr=1-2&keywords=SurePassID+U2F)
+
+*Review Author: Brad Hill*
+
+U2F over NFC works.  I haven't tried to do much else with this card.  The manufacturer's website says there is a combo card available that does both EMV payments and U2F, which sounds neat.  This card has a physical chip interface as well, but I have only used the NFC interface.  They are available from 3rd party sellers on Amazon for $20 plus S&H, but it seems like they are mostly intended for bulk purchase direct from the manufacturer.  They also mention some interesting [support software](https://www.surepassid.com/fido-u2f-solutions/) on the manufacturer website like a Windows Login Credential Provider, Linux PAM/SSH library, FIDO integration for Outlook Web Access and more, so this might be a very interesting choice to investigate for a large enterprise deployment.
+
+
+
