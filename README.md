@@ -1,2 +1,183 @@
 # U2FReviews
 Reviews of U2F devices
+
+Adam Langley got the ball rolling with his reviews [here](https://www.imperialviolet.org/2017/08/13/securitykeys.html), much of the content of which is reproduced here with his permission.  I've used a number of U2F devices Adam hasn't, and played around with NFC and Bluetooth Low Energy (BLE) connectivity, so at the request of some friends, here's an expanded set of reviews.  It's set up as a GitHub repo and I encourage you to submit PRs with reviews of devices you've used that aren't listed here. *-Brad*
+
+## Yubico U2F Security Key
+
+![Yubikey](https://www.yubico.com/wp-content/uploads/2015/04/Security-Key-by-Yubico-1000-2016-444x444.png)
+
+*Review Author: Brad Hill*
+
+**Brand:** Yubico
+**Firmware:** Yubico
+**Chip:** NXP
+**Connection:** USB-A
+**Features:** U2F only
+**Price:** $18
+**Buy:** [Yubico Store](https://www.yubico.com/store/)
+
+Very reliable, from the co-originators of the technology.  Implements the specification faithfully, has a reliable attestation certificate, physically resilient.  Yubico devices are generally a good bet for corporate deployments where you want to check attestation to ensure that a real hardware device is being used, but also a solid general consumer choice.
+
+Metadata for all Yubico devices can be found here: https://developers.yubico.com/U2F/yubico-metadata.json
+
+The blue security key is among the most expensive of the devices that only does U2F, but I've used many of them and never heard of a defect.
+
+If you're giving a U2F device to a non-technical person, I recommend this one over the more expensive Yubico devices because (as described below) the multifunction devices occasionally ship without U2F mode enabled, which is confusing and may be beyond the person's ability to self-remedy.  No mistakes are possible with the blue, U2F-only devices.
+
+**Full Disclosure:** I have at various times received complimentary Yubico devices from both Yubico and Google.
+
+-----------
+
+## Thetis U2F Security Key
+
+*Review Author: AGL*
+
+**Brand:** Thetis
+**Firmware:** Excelsecu
+**Chip:** ?
+**Connection:** USB-A
+**Features:** U2F
+**Price:** $13.95
+**Buy:** [Amazon](https://www.amazon.com/Thetis-Universal-Authentication-Protection-SalesForce/dp/B06XHTKFH3/ref=sr_1_4?s=electronics&ie=UTF8&qid=1503019143&sr=1-4&keywords=U2F)
+
+This security key is fashioned more like a USB thumb drive. The plastic inner part rotates within the outer metal shell and so the USB connector can be protected by it. The button is in the axis and is clicky, rather than capacitive, but doesn't require too much force to press. If you'll be throwing your security key in bags and worry about damaging them then perhaps this one will work well for you.
+
+A minor nit is that the attestation certificate is signed with SHA-1. That doesn't really matter, but it suggests that the firmware writers aren't paying as much attention as one would hope. (I.e. it's a [brown M&M](http://www.snopes.com/music/artists/vanhalen.asp).)
+
+----------
+
+## Feitian ePass
+**Brand:** Feitian
+**Firmware:** Feitian
+**Chip:** NXP
+**Connection:** USB-A, NFC
+**Features:** U2F, OATH HOTP (USB only), CCID
+**Price:** $13.95
+**Buy:** [Amazon](https://www.amazon.com/Feitian-ePass-NFC-FIDO-Security/dp/B01M1R5LRD/ref=sr_1_5?s=electronics&ie=UTF8&qid=1503019143&sr=1-5&keywords=U2F)
+
+*Review Author: AGL*
+
+This one is very much like the Yubico, just a little fatter around the middle. Otherwise, it's also a sealed plastic body and capacitive touch sensor. The differences are a dollar and NFC support—which should let it work with Android. However, I haven't tested this feature.
+
+I don't know what the opposite of a brown M&M is, but this security key is the only one here that has its metadata correctly registered with the [FIDO Metadata Service](https://fidoalliance.org/mds/).
+
+*Additional comments from Brad Hill:*
+
+The ePass I bought on Amazon works well over NFC, but the USB interface never worked for me.  There is Windows-only management software for these devices, but it is a bit rough for non-Chinese users, and I wasn't able to successfully enable the USB U2F onnectivity, so perhaps it is a manufacturing defect.  Supposedly these devices also have an HOTP applet and JavaCard CCID functionality available over USB, but I've not used it. It is not compatible with the Yubico NFC protocol for TOTP.
+
+----------
+
+## Feitian MultiPass
+**Brand:** Feitian
+**Firmware:** Feitian
+**Chip:** ?
+**Connection:** USB-A, NFC, BLE 
+**Features:** U2F
+**Price:** $24.99
+**Buy:** [Amazon](https://www.amazon.com/Feitian-MultiPass-FIDO-Security-Key/dp/B01LYV6TQM/ref=sr_1_6?s=electronics&ie=UTF8&qid=1503019143&sr=1-6&keywords=U2F)
+
+*Review Author: Brad Hill*
+
+This is the only device I've seen that supports all three major connectivity modes. It has a micro-USB interface that can be used (with an adatper cable) to register it with your Google account in Chrome, use it on PCs, and the battery for the BTLE also recharges through that USB port. The form factor is nice and durable and it fits well on a keychain.
+
+Personally, I find BTLE U2F to be painful. The pairing experience is not obvious (has to start from within an app, not like normal Bluetooth) and needs to be done per-device, and requires entering a code.  I was able to register my device with two different Android devices using Android 7.0-beta Google Play Services, but on each device registraition failed at the final step the first time so I had to do it twice.  Then, actually using the BTLE is quite slow. Finally, as of the time I tried, you can't add a BTLE (or NFC) key to your Google account through those interfaces, you can only authenticate with one you've registered over USB in Chrome on the desktop. So you need to use it with a PC/Mac before you can use it with your mobile device. (*Maybe SmartLock allows a way around this? I don't know because I couldn't get it to work.*) 
+
+I tried on several iOS devices to use the BTLE interface with Google Smart Lock, but was never able to see the device from iOS.
+
+There is an NFC interface on this device.  It works with Android, but the antenna is very bad and it requires knowledge of the exact position of the antenna on your phone and a lot of patience to make it actually work.
+
+This key does not support the Yubico TOTP over NFC protocol.
+
+I put this on a keychain when I bought it, expecting it to be my new "daily driver", but the fiddly NFC antenna and lack of NFC TOTP support means it now it stays in my bag as an emergency backup.
+
+
+---------------
+
+## U2F Zero
+**Brand:** Conorco
+**Firmware:** Conor Patrick
+**Chip:** Atmel
+**Connection:** USB-A
+**Features:** U2F
+**Price:** $8.99
+**Buy:** [Amazon](https://www.amazon.com/U2F-Zero/dp/B01L9DUPK6)
+
+*Review Author: AGL*
+
+It's the only token on Amazon that has open source firmware (and hardware designs), and that was worth waiting for. It's also the cheapest of all the options here.
+
+Sadly, I have to report that I can't quite recommend it because, in my laptop (a Chromebook Pixel), it's not thick enough to sit in the USB port correctly: Since it only has the “tongue” of a USB connector, it can move around in the port a fair bit. That's true of the other tokens too, but with the U2F Zero, unless I hold it just right, it fails to make proper contact. Since operating it requires pressing the button, it's almost unusable in my laptop.
+
+However, it's fine with a couple of USB hubs that I have and in my desktop computer, so it might be fine for you. Depends how much you value the coolness factor of it being open-source.
+
+*Additional comments from Brad Hill:*
+
+A cool little device, and sturdier than it looks. I'm encouraged that they can source the materials, at hobbyist scale, for around $6, so there is definitely room for prices of more polished and mass produced devices to come down.  I have the first version of this device, which suffers from some serious defects: First, it generates a device-specific attestation key, which makes it trackable cross-domain. Second, it only stores up to 8 registrations. You can use a Linux-only utility to clear the key storage but you have to delete them all.  I understand the latest versions now use a key wrapping algorithm like the Yubico devices that addresses this limitation; unfortunately the firmware isn't upgradable.  I can't recommend the original version for more than technical curiosity.
+
+-------------
+
+## KEY-ID FIDO U2F Security Key
+**Brand:** KEY-ID
+**Firmware:** Feitian(?)
+**Chip:** ?
+**Connection:** USB-A
+**Features:** U2F
+**Price:** $9.95
+**Buy:** [Adafruit](https://www.adafruit.com/product/3363)
+
+*Review Author: AGL*
+
+I photographed this one while plugged in in order to show the most obvious issue with this device: everyone will know when you're using it! Whenever it's plugged in, the green LED on the end is lit up and, although the saturation in the photo exaggerates the situation a little, it really is too bright. When it's waiting for a touch, it starts flashing too.
+
+In addition, whenever I remove this from my desktop computer, the computer reboots. That suggests an electrical issue with the device itself—it's probably shorting something that shouldn't be shorted, like the USB power pin to ground, for example.
+
+While this device is branded “KEY-ID”, I believe that the firmware is done by Feitian. There are similarities in certificate that match the Feitian device and, if you look up the FIDO certification, you find that Feitian registered a device called “KEY-ID FIDO® U2F Security Key”. Possibly Feitian decided against putting their brand on this.
+
+*Additional comments from Brad Hill:*
+
+I've used and given away a number of these because of their attractive price point and not heard of the reboot issues AGL describes above manifesting on MacBooks.
+
+----------
+
+## HyperFIDO Mini
+**Brand:** HyperFIDO
+**Firmware:** Feitian(?)
+**Chip:** ?
+**Connection:** USB-A
+**Features:** U2F
+**Price:** $13.95
+**Buy:** [Amazon](https://www.amazon.com/HyperFIDO-Mini-U2F-Security-Key/dp/B01LZO0WE9)
+
+*Review Author: AGL*
+
+By observation, this is physically identical to the KEY-ID device, save for the colour. It has the same green LED too (see above).
+
+However, it manages to be worse. The KEY-ID device is highlighted in Amazon as a “new 2017 model”, and maybe this an example of the older model. Not only does it cause my computer to reliably reboot when removed (I suffered to bring you this review, dear reader), it also causes all devices on a USB hub to stop working when plugged in. When plugged into my laptop it does work—as long as you hold it up in the USB socket. The only saving grace is that, when you aren't pressing it upwards, at least the green LED doesn't light up.
+
+-------------
+
+## HyperFIDO U2F Security Key
+**Brand:** HyperFIDO
+**Firmware:** Feitian(?)
+**Chip:** ?
+**Connection:** USB-A
+**Features:** U2F
+**Price:** $9.98
+**Buy:** [Amazon](https://www.amazon.com/HyperFido-K5-FIDO-U2F-Security/dp/B00WIX4JMC/ref=pd_bxgy_229_img_2?_encoding=UTF8&psc=1&refRID=Q4CAYP6B64ESGRPH5PG9)
+
+*Review Author: AGL*
+
+This HyperFIDO device is plastic so avoids the electrical issues of the KEY-ID and HyperFIDO Mini, above. It also avoids having an LED that can blind small children.
+
+However, at least on the one that I received, the plastic USB part is only just small enough to fit into a USB socket. It takes a fair bit of force to insert and remove it. Also the end cap looks like it should be symmetrical and so able to go on either way around, but it doesn't quite work when upside down.
+
+Once inserted, pressing the button doesn't take too much force, but it's enough to make the device bend worryingly in the socket. It doesn't actually appear to be a problem, but it adds a touch of anxiety to each use. Overall, it's cheap and you'll know it.
+
+*Additional comments from Brad Hill:*
+
+There is funny stuff going on with how the several of these I have present their attestation.  Every time the device is registered, they generate a unique device name as part of the certificate.  This has the upside of not presenting a cross-domain tracking identifier, but it tells me that the attestation private key is in the device somewhere. (or it may be generating a new random attestation key and cert every time, I don't recall)  Anyway, they seem fine for consumer use - I've used stuck in my monitor's USB hub on a daily basis for almost a year now.  But I wouldn't recommend these if you care about checking attestations.
+
+--------------
+
+
