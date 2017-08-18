@@ -113,7 +113,7 @@ The ePass I bought on Amazon works well over NFC, but the USB interface never wo
 
 *Review Author: Brad Hill*
 
-This is the only device I've seen that supports all three major connectivity modes. It has a micro-USB interface that can be used (with an adatper cable) to register it with your Google account in Chrome, use it on PCs, and the battery for the BTLE also recharges through that USB port. The form factor is nice and durable and it fits well on a keychain.
+This is the only device I've seen that supports all three major connectivity modes. It has a micro-USB interface that can be used (with an adapter cable) to register it with your Google account in Chrome, use it on PCs, and the battery for the BTLE also recharges through that USB port. The form factor is nice and durable and it fits well on a keychain.
 
 Personally, I find BTLE U2F to be painful. The pairing experience is not obvious (has to start from within an app, not like normal Bluetooth) and needs to be done per-device, and requires entering a code.  I was able to register my device with two different Android devices using Android 7.0-beta Google Play Services, but on each device registraition failed at the final step the first time so I had to do it twice.  Then, actually using the BTLE is quite slow. Finally, as of the time I tried, you can't add a BTLE (or NFC) key to your Google account through those interfaces, you can only authenticate with one you've registered over USB in Chrome on the desktop. So you need to use it with a PC/Mac before you can use it with your mobile device. (*Maybe SmartLock allows a way around this? I don't know because I couldn't get it to work.*) 
 
