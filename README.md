@@ -224,8 +224,91 @@ Once inserted, pressing the button doesn't take too much force, but it's enough 
 
 *Additional comments from Brad Hill:*
 
-There is funny stuff going on with how the several of these I have present their attestation.  Every time the device is registered, they generate a unique device name as part of the certificate.  This has the upside of not presenting a cross-domain tracking identifier, but it tells me that the attestation private key is in the device somewhere. (or it may be generating a new random attestation key and cert every time, I don't recall)  Anyway, they seem fine for consumer use - I've used stuck in my monitor's USB hub on a daily basis for almost a year now.  But I wouldn't recommend these if you care about checking attestations.
+There is funny stuff going on with how the several of these I have present their attestation.  Every time the device is registered, they generate a unique device name as part of the certificate.  This has the upside of not presenting a cross-domain tracking identifier, but it tells me that the attestation private key is in the device somewhere. (or it may be generating a new random attestation key and cert every time, I don't recall)  Anyway, they seem fine for consumer use - I've used one I leave installed in my monitor's USB hub on a daily basis for almost a year now.  But I wouldn't recommend these if you care about checking attestations.
 
 --------------
 
+## Plug-Up Card Key
+**Brand:** Plug-Up
 
+**Firmware:** Plug-Up
+
+**Chip:** ?
+
+**Connection:** USB-A
+
+**Features:** U2F
+
+**Price:** N/A
+
+**Buy:** [Amazon](https://www.amazon.com/Plug-up-International-U2F-SK-01-FIDO-Security/dp/B00OGPO3ZS/ref=sr_1_1?ie=UTF8&qid=1503085374&sr=8-1&keywords=plug-up+u2f)
+
+*Review Author: Brad Hill*
+
+I've seen these mentioned a number of times and used in press photos.  They are printed in a 1mm-depth credit-card format which you punch out and fold over to form the key.  I have two from 2014, keepsakes of the FIDO plenary in Paris.  These don't haver a button, you must physically insert and remove the key every time.
+
+The key I used sucessfully in my Chromebook at that time hasn't worked for several years now.  I don't know if that's due to protocol changes or manufacturing quality.  As much as I like the idea of keys cheap enough to give away, I'm not sure I'd recommend these, because the accounts you'll be protecting with them are quite valuable, and it would be a shame to be locked out because a $5 piece of cheap hardware failed.  At any rate, it doesn't seem that Plug-Up is still manufacturing these, so this is mostly a historical curiousity.
+
+**Full Disclosure:** These devices were given to me by Plug-Up.
+
+-------------
+
+## YubiKey 4, 4C and Nano
+
+**Brand:** Yubico
+
+**Firmware:** Yubico
+
+**Chip:** NXP
+
+**Connection:** USB-A (4 and Nano), USB-C (4C)
+
+**Features:** U2F, TOTP, Yubico OTP, PGP, PIV/CCID
+
+**Price:** $40 / $50 / $50 
+
+**Buy:** [Yubico Store](https://www.yubico.com/store/)
+
+*Review Author: Brad Hill*
+
+I'll review these together as they are essentially the same device in different packaging.  These have the same solid U2F implementation as the U2F-only key, plus a bunch of additional features.   My favorite is the TOTP applet, accessible though the [Yubico Authenticator](https://www.yubico.com/support/knowledge-base/categories/articles/yubico-authenticator-download/) application for Linux, Windows and Mac.  I like having hardware TOTP key storage and backup, as I discuss in more detail below, so this is a killer feature for me.
+
+I'm also interested in trying out the PGP features of the key for code signing on GitHub, though I otherwise try to avoid PGP.
+
+Regarding the packaging, the 4 has the standard tried-and-true Yubikey packaging.  The 4C is a bit thicker.  I have heard reports that the first generation of the 4C devices do not withstand everyday carry on a keychain; hopefully current models are more durable. (I don't have one.) The Nano is a great choice to leave in your computer, monitor or other hub full-time, easily accessible with just a tap.  I tried carrying a Nano with a small USB-C adapter on my keys for a few weeks, but the tiny bit of metal where a nylon camera-loop attachment goes tore out.  It would be a big bummer to lose a $50 device and the associated credentials this way, so I can't recommend the Nano as an everyday carry device.
+
+*Troubleshooting:* 
+
+I've had friends that purchased YubiKeys of these makes occasionally report that they don't work with U2F websites.  This has always been due to the fact that these devices have several ways in which they can be configured (proprietary OTP, U2F and PIV/CCID) and the U2F mode was somehow turned off when it shipped to them. You can use the [YubiKey Personalization Tool](https://www.yubico.com/support/knowledge-base/categories/articles/yubikey-personalization-tools/) to make sure the U2F attachment mode is enabled. (If you're generous enough to be giving away $40 devices, you might want to double-check this first.)
+
+Some people using the Nano have complained that it constantly blinks the LED at a slow interval when inserted.  If this bothers you, disabling the PIV/CCID attachment mode with the Personalization Tool will stop this, and the LED will only blink (rapidly) when waiting a U2F touch.
+
+**Full Disclosure:** I have at various times received complimentary Yubico devices from both Yubico and Google.
+
+---------------
+
+## YubiKey NEO (Editor's Choice)
+
+**Brand:** Yubico
+
+**Firmware:** Yubico
+
+**Chip:** NXP
+
+**Connection:** USB-A and NFC
+
+**Features:** U2F, TOTP, Yubico OTP, PGP, PIV/CCID
+
+**Price:** $50 
+
+**Buy:** [Yubico Store](https://www.yubico.com/store/)
+
+*Review Author: Brad Hill*
+
+This is shares all the features of the 4th generation YubiKeys above, but is a 3rd generation device so doesn't support the 4096 bit PGP features of the ones above.  On the other hand, it does U2F, TOTP and PGP over NFC, which is *the* killer feature if you are an Android user.
+
+The Yubico Authenticator App for Android [ [Google Play Store](https://play.google.com/store/apps/details?id=com.yubico.yubioath&hl=en) ] allows you to save your TOTP seeds to the key's hardware with a tap, and access codes with another tap.  I love this feature so much.
+
+The Yubikey NEO is my "daily driver", attached to my badge lanyard and used every day for several years.
+
+**Full Disclosure:** I have at various times received complimentary Yubico devices from both Yubico and Google.
