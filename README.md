@@ -360,6 +360,8 @@ Caveats?
 
 **Buy:** [Fidesmo Store](http://shop.fidesmo.com/)
 
+*Review Author: Brad Hill*
+
 A great device at a great price. The Fidesmo card is standard JavaCard hardware with custom firmware on top and an app store for Android [ [Google Play Store](https://play.google.com/store/apps/details?id=com.fidesmo.sec.android) ] that allows loading various modules that can be used over NFC. (or, for a few Euros more, through the physical chip-card interface, but I haven't tried that)  I use the U2F and OTP applets, the latter of which is fully compatible with the Yubico Authenticator app for Android. There are also transit cards, a bitcoin wallet, a PGP app and more available, each for a few Euros.
 
 I keep this in my wallet and backup all my TOTP seeds to it, in addition to my YubiKey NEO. I really can't say enough good things about this device, I just wish NFC support were more widespread for my other important accounts beyond Facebook.
