@@ -47,6 +47,8 @@ If you're giving a U2F device to a non-technical person, I recommend this one ov
 
 ## Thetis U2F Security Key
 
+![Thetis](/thetis.jpeg)
+
 *Review Author: AGL*
 
 **Brand:** Thetis
@@ -70,6 +72,8 @@ A minor nit is that the attestation certificate is signed with SHA-1. That doesn
 ----------
 
 ## Feitian ePass
+![ePass](/ePass.jpeg)
+
 **Brand:** Feitian
 
 **Firmware:** Feitian
@@ -97,6 +101,8 @@ The ePass I bought on Amazon works well over NFC, but the USB interface never wo
 ----------
 
 ## U2F Zero
+![zero](/zero.jpeg)
+
 **Brand:** Conorco
 
 **Firmware:** Conor Patrick
@@ -126,6 +132,8 @@ A cool little device, and sturdier than it looks. I'm encouraged that they can s
 -------------
 
 ## KEY-ID FIDO U2F Security Key
+![key-id](/keyid.jpeg)
+
 **Brand:** KEY-ID
 
 **Firmware:** Feitian(?)
@@ -155,6 +163,8 @@ I've used and given away a number of these because of their attractive price poi
 ----------
 
 ## HyperFIDO Mini
+![HyperFIDO Mini](/hypermini.jpeg)
+
 **Brand:** HyperFIDO
 
 **Firmware:** Feitian(?)
@@ -178,6 +188,8 @@ However, it manages to be worse. The KEY-ID device is highlighted in Amazon as a
 -------------
 
 ## HyperFIDO U2F Security Key
+![HyperFIDO](/hyper.jpeg)
+
 **Brand:** HyperFIDO
 
 **Firmware:** Feitian(?)
@@ -207,6 +219,8 @@ There is funny stuff going on with how the several of these I have present their
 --------------
 
 ## Plug-Up Card Key
+![plug-up](/plugup.jpg)
+
 **Brand:** Plug-Up
 
 **Firmware:** Plug-Up
@@ -232,6 +246,8 @@ The key I used sucessfully in my Chromebook at that time hasn't worked for sever
 -------------
 
 ## YubiKey 4, 4C and Nano
+![4 and nano](/4-nano.jpg)
+![4C](/4c.jpeg)
 
 **Brand:** Yubico
 
@@ -248,6 +264,7 @@ The key I used sucessfully in my Chromebook at that time hasn't worked for sever
 **Buy:** [Yubico Store](https://www.yubico.com/store/)
 
 *Review Author: Brad Hill*
+*4C Photo Credit: AGL*
 
 I'll review these together as they are essentially the same device in different packaging.  These have the same solid U2F implementation as the U2F-only key, plus a bunch of additional features.   My favorite is the TOTP applet, accessible though the [Yubico Authenticator](https://www.yubico.com/support/knowledge-base/categories/articles/yubico-authenticator-download/) application for Linux, Windows and Mac.  I like having hardware TOTP key storage and backup, as I discuss in more detail below, so this is a killer feature for me.
 
@@ -313,6 +330,7 @@ Caveats?
 
 
 ## Fidesmo Card (Editor's Choice)
+![Fidesmo Card](/fidesmo.jpg)
 
 **Brand:** Fidesmo
 
@@ -339,6 +357,7 @@ The dual-interface cards are available blank and can be custom-printed. If you w
 -------------
 
 ## SurePassID TapID Card
+![TapID](/surepassid.jpg)
 
 **Brand:** SurePassID
 
@@ -369,6 +388,8 @@ I hope we'll see some rapid progress on this front and I can just keep a "magic 
 -----------
 
 ## Feitian MultiPass
+![MultiPass](/multipass.jpg)
+
 **Brand:** Feitian
 
 **Firmware:** Feitian
@@ -397,6 +418,7 @@ I put this on a keychain when I bought it, expecting it to be my new "daily driv
 
 ---------------
 ## VASCO DIGIPASS SecureClick
+![SecureClick](/secureclick.jpg)
 
 **Brand:** VASCO
 
