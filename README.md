@@ -283,6 +283,7 @@ Some people using the Nano have complained that it constantly blinks the LED at 
 ---------------
 
 ## YubiKey NEO (Editor's Choice)
+![NEO](/neo.jpg)
 
 **Brand:** Yubico
 
