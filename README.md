@@ -438,9 +438,9 @@ I put this on a keychain when I bought it, expecting it to be my new "daily driv
 
 *Review Author: Brad Hill*
 
-This is a Bluetooth Low-Energy U2F device.  It is about the diamter of a US Quarter, and about the thickness of an old Pound coin.  It comes with silicone keychain sleeves in three colors and a USB-A tranciever for use on desktop computers.
+This is a Bluetooth Low-Energy U2F device.  It is about the diameter of a American Quarter, and about the thickness of an old UK Pound coin.  It comes with silicone keychain sleeves in three colors and a USB-A tranciever for use on desktop computers.
 
-This device is easy to use on a desktop system with the included tranciever, and no additional pairing procedure is needed.  Exposing it as a USB device on a desktop system allows registering it with a Google or other account.  The BLE pairing and authentication worked for me on Android.  With Google SmartLock on iOS, I was able to pair the device and clicks are registered, but the SmartLock app just gives me a 400 error page afterwards instead of completing the authentication. (I wasn't even able to get that far with the Feitian device, so I can't say if this is Google's fault or VASCO's, but I lean towards Google.)
+This device is easy to use on a desktop system with the included USB adapter, and no additional pairing procedure is needed, but you need to keep the adapter inserted to use it, so it burns a port and is troublesome on the new MacBooks.  Exposing it this way as a USB device on a desktop system allows registering it with a Google or other account.  The BLE pairing and authentication worked for me on Android.  With Google SmartLock on iOS, I was able to pair the device and clicks are registered, but the iOS SmartLock app just gives me a 400 error page afterwards instead of completing the authentication. (I wasn't even able to get that far with the Feitian device, so I can't say if this is Google's fault or VASCO's, but I lean towards Google.)
 
 The responsiveness of this device when pairing and authenticating is much better than the Feitian MultiPass.
 
