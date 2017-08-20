@@ -96,38 +96,6 @@ The ePass I bought on Amazon works well over NFC, but the USB interface never wo
 
 ----------
 
-## Feitian MultiPass
-**Brand:** Feitian
-
-**Firmware:** Feitian
-
-**Chip:** ?
-
-**Connection:** USB-A, NFC, BLE 
-
-**Features:** U2F
-
-**Price:** $24.99
-
-**Buy:** [Amazon](https://www.amazon.com/Feitian-MultiPass-FIDO-Security-Key/dp/B01LYV6TQM/ref=sr_1_6?s=electronics&ie=UTF8&qid=1503019143&sr=1-6&keywords=U2F)
-
-*Review Author: Brad Hill*
-
-This is the only device I've seen that supports all three major connectivity modes. It has a micro-USB interface that can be used (with an adapter cable) to register it with your Google account in Chrome, use it on PCs, and the battery for the BTLE also recharges through that USB port. The form factor is nice and durable and it fits well on a keychain.
-
-Personally, I find BTLE U2F to be painful. The pairing experience is not obvious (has to start from within an app, not like normal Bluetooth) and needs to be done per-device, and requires entering a code.  I was able to register my device with two different Android devices using Android 7.0-beta Google Play Services, but on each device registraition failed at the final step the first time so I had to do it twice.  Then, actually using the BTLE is quite slow. Finally, as of the time I tried, you can't add a BTLE (or NFC) key to your Google account through those interfaces, you can only authenticate with one you've registered over USB in Chrome on the desktop. So you need to use it with a PC/Mac before you can use it with your mobile device. (*Maybe SmartLock allows a way around this? I don't know because I couldn't get it to work.*) 
-
-I tried on several iOS devices to use the BTLE interface with Google Smart Lock, but was never able to see the device from iOS.
-
-There is an NFC interface on this device.  It works with Android, but the antenna is very bad and it requires knowledge of the exact position of the antenna on your phone and a lot of patience to make it actually work.
-
-This key does not support the Yubico TOTP over NFC protocol.
-
-I put this on a keychain when I bought it, expecting it to be my new "daily driver", but the fiddly NFC antenna and lack of NFC TOTP support means it now it stays in my bag as an emergency backup.
-
-
----------------
-
 ## U2F Zero
 **Brand:** Conorco
 
@@ -323,7 +291,7 @@ The Yubikey NEO is my "daily driver", attached to my badge lanyard and used ever
 
 **Full Disclosure:** I have at various times received complimentary Yubico devices from both Yubico and Google.
 
-----------
+-------------
 
 # NFC-only Devices
 
@@ -390,5 +358,74 @@ The dual-interface cards are available blank and can be custom-printed. If you w
 
 U2F over NFC works.  I haven't tried to do much else with this card.  The manufacturer's website says there is a combo card available that does both EMV payments and U2F, which sounds neat.  This card has a physical chip interface as well, but I have only used the NFC interface.  They are available from 3rd party sellers on Amazon for $20 plus S&H, but it seems like they are mostly intended for bulk purchase direct from the manufacturer.  They also mention some interesting [support software](https://www.surepassid.com/fido-u2f-solutions/) on the manufacturer website like a Windows Login Credential Provider, Linux PAM/SSH library, FIDO integration for Outlook Web Access and more, so this might be a very interesting choice to investigate for a large enterprise deployment.
 
+----------
 
+# Bluetooth Low Energy Devices
 
+Personally, I find BLE U2F to be painful. The pairing experience is not obvious, (it has to start from within an app, not like normal Bluetooth) needs to be done per-device, and requires entering a code.  Only Google has support for BLE authenticators, and I've found it consistently buggy on both Android and iOS.  I have to make multiple attempts to register a new BLE authenticator on Android, and have not successfully completed a registration / authentication on iOS with SmartLock yet with either style of device I own.  If you're hoping th deal with the USB-C issue of your new MacBook via BLE, don't get your hopes up there, either - Chrome desktop doesn't interact with BLE authenticators yet.  Finally, as of the time I tried, you can't add a BTLE (or NFC) key to your Google account directly, you can only authenticate with one you've registered over USB in Chrome on the desktop. So you need to register it with a PC/Mac before you can use it with your mobile device.
+
+I hope we'll see some rapid progress on this front and I can just keep a "magic button" on my keys in my pocket soo that I press to authenticate anywhere without dongles or adapters, but I'm not holding my breath.
+
+-----------
+
+## Feitian MultiPass
+**Brand:** Feitian
+
+**Firmware:** Feitian
+
+**Chip:** ?
+
+**Connection:** USB-A, NFC, BLE 
+
+**Features:** U2F
+
+**Price:** $24.99
+
+**Buy:** [Amazon](https://www.amazon.com/Feitian-MultiPass-FIDO-Security-Key/dp/B01LYV6TQM/ref=sr_1_6?s=electronics&ie=UTF8&qid=1503019143&sr=1-6&keywords=U2F)
+
+*Review Author: Brad Hill*
+
+This is the only device I've seen that supports all three major connectivity modes. It has a micro-USB interface that can be used (with an adapter cable) to register it with your Google account in Chrome, use it on PCs, and the battery for the BTLE also recharges through that USB port. The form factor is nice and durable and it fits well on a keychain.
+
+I tried on several iOS devices to use the BTLE interface with Google SmartLock, but was never able to see the device from iOS.  It works on Android after a few tries, but the responsiveness is very poor - pairing and authentication operations take a long time to complete.
+
+There is an NFC interface on this device.  It works with Android, but the antenna is very bad and it requires knowledge of the exact position of the antenna on your phone and a lot of patience to make it actually work.
+
+This key does not support the Yubico TOTP over NFC protocol.
+
+I put this on a keychain when I bought it, expecting it to be my new "daily driver", but the fiddly NFC antenna, lack of NFC TOTP support, and my overall disappointment so far with BLE means it now it stays in my bag as an emergency backup.
+
+---------------
+## VASCO DIGIPASS SecureClick
+
+**Brand:** VASCO
+
+**Firmware:** VASCO
+
+**Chip:** ? (VASCO?)
+
+**Connection:** USB-A and BLE
+
+**Features:** U2F
+
+**Price:** £32.21 
+
+**Buy:** [Amazon UK](https://www.amazon.co.uk/VASCO-DATA-SECURITY-DIGIPASS-SecureClick/dp/B01M0DPK3K/ref=sr_1_1?ie=UTF8&qid=1503188198&sr=8-1&keywords=vasco+secureclick)
+
+*Review Author: Brad Hill*
+
+This is a Bluetooth Low-Energy U2F device.  It is about the diamter of a US Quarter, and about the thickness of an old Pound coin.  It comes with silicone keychain sleeves in three colors and a USB-A tranciever for use on desktop computers.
+
+This device is easy to use on a desktop system with the included tranciever, and no additional pairing procedure is needed.  Exposing it as a USB device on a desktop system allows registering it with a Google or other account.  The BLE pairing and authentication worked for me on Android.  With Google SmartLock on iOS, I was able to pair the device and clicks are registered, but the SmartLock app just gives me a 400 error page afterwards instead of completing the authentication. (I wasn't even able to get that far with the Feitian device, so I can't say if this is Google's fault or VASCO's, but I lean towards Google.)
+
+The responsiveness of this device when pairing and authenticating is much better than the Feitian MultiPass.
+
+The BLE pairing experience instructs you to enter a code "printed on the device".  The Feitian MultiPass has such a code, this device does not, but '0000' worked.
+
+The unit is sealed and the battery is not replacable. I am told it should last up to five years, which is a reasonable lifetime, but necessitates a backup in my opinion.
+
+These do not appear to be available for purchase in the United States.
+
+**Full Disclosure:** I received several of these devices for evalutation courtesy of VASCO.
+
+----------
