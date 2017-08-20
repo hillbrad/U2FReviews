@@ -264,6 +264,7 @@ The key I used sucessfully in my Chromebook at that time hasn't worked for sever
 **Buy:** [Yubico Store](https://www.yubico.com/store/)
 
 *Review Author: Brad Hill*
+
 *4C Photo Credit: AGL*
 
 I'll review these together as they are essentially the same device in different packaging.  These have the same solid U2F implementation as the U2F-only key, plus a bunch of additional features.   My favorite is the TOTP applet, accessible though the [Yubico Authenticator](https://www.yubico.com/support/knowledge-base/categories/articles/yubico-authenticator-download/) application for Linux, Windows and Mac.  I like having hardware TOTP key storage and backup, as I discuss in more detail below, so this is a killer feature for me.
