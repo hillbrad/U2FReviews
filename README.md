@@ -3,7 +3,28 @@ Reviews of U2F devices
 
 Adam Langley got the ball rolling with his reviews [here](https://www.imperialviolet.org/2017/08/13/securitykeys.html), much of the content of which is reproduced here with his permission.  I've used a number of U2F devices Adam hasn't, and played around with NFC and Bluetooth Low Energy (BLE) connectivity, as well as multifunction devices, so at the request of some friends here's an expanded set of reviews.  It's set up as a GitHub repo and I encourage you to submit PRs with reviews of devices you've used that aren't listed here. *-Brad*
 
-## *A note on multifunction devices*
+Table of Contents
+
+* [A note on U2F + TOTP devices](#multifunction)
+* [USB Devices](#usb)
+   * [Yubico U2F Security Key](#yubicou2f)
+   * [Thetis U2F Security Key](#thetis)
+   * [Feitian ePass](#epass)
+   * [U2F Zero](#zero)
+   * [KEY-ID FIDO U2F Security Key](#keyid)
+   * [HyperFIDO Mini](#hypermini)
+   * [HyperFIDO U2F Security Key](#hyper)
+   * [Plug-Up Card Key](#plugup)
+   * [YubiKey 4, 4C and Nano](#yubikey)
+   * [YubiKey NEO](#neo)
+ * [NFC-only Devices](#nfc)
+   * [Fidesmo Card](#fidesmo)
+   * [SurePassID TapID Card](#tapid)
+ * [Bluetooth Low Energy Devices](#ble)
+   * [Feitian MultiPass](#multipass)
+   * [VASCO DigiPass SecureClick](#secureclick)
+
+## <a name="multifunction"></a>*A note on multifunction U2F+TOTP devices*
 
 I love U2F and use it everywhere I can.  Unfortunately, that is very few places and, with a few exceptions, mostly only on Chrome on desktop computers.  I have more TOTP (aka 'code generator' / 'authenticator app' / OATH) credentials than U2F registrations, and I have a TOTP credential set up for every site where I have a U2F registration, for use where U2F isn't available.  For me, this means that the devices (the more expensive Yubico ones and the Fidesmo card) that support a hardware-based TOTP app on the same device are far more useful for an advanced user like myself who enables 2FA everywhere than is a U2F-only device. The ability to get these codes via NFC with the Yubico Authenticator app on Android is particularly convenient and secure.
 
@@ -12,8 +33,9 @@ I am dilligent and always register my new seeds redundantly on two devices, so l
 If you are a sophisticated user of two-factor auth, it is well worth spending the extra money to get TOTP functionality even if you don't plan to use any of the other SmartCard or PGP features.
 
 -------------
+# <a name="usb"></a> USB Devices
 
-## Yubico U2F Security Key
+## <a name="yubicou2f"></a>Yubico U2F Security Key
 
 ![Yubikey](https://www.yubico.com/wp-content/uploads/2015/04/Security-Key-by-Yubico-1000-2016-444x444.png)
 
@@ -45,7 +67,7 @@ If you're giving a U2F device to a non-technical person, I recommend this one ov
 
 -----------
 
-## Thetis U2F Security Key
+## <a name="thetis"></a>Thetis U2F Security Key
 
 ![Thetis](/thetis.jpeg)
 
@@ -71,7 +93,7 @@ A minor nit is that the attestation certificate is signed with SHA-1. That doesn
 
 ----------
 
-## Feitian ePass
+## <a name="epass"></a>Feitian ePass
 ![ePass](/ePass.jpeg)
 
 **Brand:** Feitian
@@ -100,7 +122,7 @@ The ePass I bought on Amazon works well over NFC, but the USB interface never wo
 
 ----------
 
-## U2F Zero
+## <a name="zero"></a> <a name="yubicou2f"></a>U2F Zero
 ![zero](/zero.jpeg)
 
 **Brand:** Conorco
@@ -131,7 +153,7 @@ A cool little device, and sturdier than it looks. I'm encouraged that they can s
 
 -------------
 
-## KEY-ID FIDO U2F Security Key
+## <a name="keyid"></a> KEY-ID FIDO U2F Security Key
 ![key-id](/keyid.jpeg)
 
 **Brand:** KEY-ID
@@ -162,7 +184,7 @@ I've used and given away a number of these because of their attractive price poi
 
 ----------
 
-## HyperFIDO Mini
+## <a name="hypermini"></a> HyperFIDO Mini
 ![HyperFIDO Mini](/hypermini.jpeg)
 
 **Brand:** HyperFIDO
@@ -187,7 +209,7 @@ However, it manages to be worse. The KEY-ID device is highlighted in Amazon as a
 
 -------------
 
-## HyperFIDO U2F Security Key
+## <a name="hyper"></a> HyperFIDO U2F Security Key
 ![HyperFIDO](/hyper.jpeg)
 
 **Brand:** HyperFIDO
@@ -218,7 +240,7 @@ There is funny stuff going on with how the several of these I have present their
 
 --------------
 
-## Plug-Up Card Key
+## <a name="plugup"></a> Plug-Up Card Key
 ![plug-up](/plugup.jpg)
 
 **Brand:** Plug-Up
@@ -245,7 +267,7 @@ The key I used sucessfully in my Chromebook at that time hasn't worked for sever
 
 -------------
 
-## YubiKey 4, 4C and Nano
+## <a name="yubikey"></a> YubiKey 4, 4C and Nano
 ![4 and nano](/4-nano.jpg)
 ![4C](/4c.jpeg)
 
@@ -283,7 +305,7 @@ Some people using the Nano have complained that it constantly blinks the LED at 
 
 ---------------
 
-## YubiKey NEO (Editor's Choice)
+## <a name="neo"></a> YubiKey NEO (Editor's Choice)
 ![NEO](/neo.jpg)
 
 **Brand:** Yubico
@@ -312,7 +334,7 @@ The Yubikey NEO is my "daily driver", attached to my badge lanyard and used ever
 
 -------------
 
-# NFC-only Devices
+# <a name="nfc"></a> NFC-only Devices
 
 I have two card form factor devices that do U2F over NFC only.  I really like them, but there are some important caveats I'll get to.  
 
@@ -331,7 +353,7 @@ Caveats?
 * Registration difficulties.  Currently only https://m.facebook.com/ (not the app) on Chrome on Android has mobile-specific support for registering an NFC U2F authenticator.  On GitHub, you can force browse to the desktop site and make it work if you can manage to read the itty-bitty type.  Google supports authenticating with NFC to your account natively in Android, but at the time of this writing, you can only add a new U2F device to your account using desktop Chrome, which only supports USB.  So, you can use NFC with a multi-attachment device like the YubiKey NEO or Feitian MultiPass that was registered over USB first, but you can't use one of the card devices below with your Google account.  I hope they will fix this soon.  These devices have or are available with smartcard chip physical interface, but I don't have compatible reader hardware to test if this can be used to bypass this registration difficulty.
 
 
-## Fidesmo Card (Editor's Choice)
+## <a name="fidesmo"></a> Fidesmo Card (Editor's Choice)
 ![Fidesmo Card](/fidesmo.jpg)
 
 **Brand:** Fidesmo
@@ -358,7 +380,7 @@ The dual-interface cards are available blank and can be custom-printed. If you w
 
 -------------
 
-## SurePassID TapID Card
+## <a name="tapid"></a> SurePassID TapID Card
 ![TapID](/surepassid.jpg)
 
 **Brand:** SurePassID
@@ -381,7 +403,7 @@ U2F over NFC works.  I haven't tried to do much else with this card.  The manufa
 
 ----------
 
-# Bluetooth Low Energy Devices
+# <a name="ble"></a> Bluetooth Low Energy Devices
 
 Personally, I find BLE U2F to be painful. The pairing experience is not obvious, (it has to start from within an app, not like normal Bluetooth) needs to be done per-device, and requires entering a code.  Only Google has support for BLE authenticators, and I've found it consistently buggy on both Android and iOS.  I have to make multiple attempts to register a new BLE authenticator on Android, and have not successfully completed a registration / authentication on iOS with SmartLock yet with either style of device I own.  If you're hoping to deal with the USB-C issue of your new MacBook via BLE, don't get your hopes up there, either - Chrome desktop doesn't interact with BLE authenticators yet.  Finally, as of the time I tried, you can't add a BTLE (or NFC) key to your Google account directly, you can only authenticate with one you've registered over USB in Chrome on the desktop. So you need to register it with a PC/Mac before you can use it with your mobile device.
 
@@ -389,7 +411,7 @@ I hope we'll see some rapid progress on this front and I can just keep a "magic 
 
 -----------
 
-## Feitian MultiPass
+## <a name="multipass"></a> Feitian MultiPass
 ![MultiPass](/multipass.jpg)
 
 **Brand:** Feitian
@@ -419,7 +441,7 @@ This key does not support the Yubico TOTP over NFC protocol.
 I put this on a keychain when I bought it, expecting it to be my new "daily driver", but the fiddly NFC antenna, lack of NFC TOTP support, and my overall disappointment so far with BLE means it now it stays in my bag as an emergency backup.
 
 ---------------
-## VASCO DIGIPASS SecureClick
+## <a name="secureclick"></a> VASCO DIGIPASS SecureClick
 ![SecureClick](/secureclick.jpg)
 
 **Brand:** VASCO
