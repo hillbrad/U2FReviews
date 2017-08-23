@@ -468,7 +468,7 @@ The responsiveness of this device when pairing and authenticating is much better
 
 The BLE pairing experience instructs you to enter a code "printed on the device".  The Feitian MultiPass has such a code, this device does not, but '0000' worked.
 
-The unit is sealed and the battery is not replacable. I am told it should last up to five years, which is a reasonable lifetime, but necessitates a backup in my opinion.
+The unit uses an included CR2012 battery, which should last at least two years when used for maximum of 10 authentications per day. The battery is replacable, and instructions for doing so are in the manual.
 
 These do not appear to be available for purchase in the United States.
 
