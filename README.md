@@ -418,7 +418,7 @@ I hope we'll see some rapid progress on this front and I can just keep a "magic 
 
 **Firmware:** Feitian
 
-**Chip:** ?
+**Chip:** NXP
 
 **Connection:** USB-A, NFC, BLE 
 
@@ -439,6 +439,8 @@ There is an NFC interface on this device.  It works with Android, but the antenn
 This key does not support the Yubico TOTP over NFC protocol.
 
 I put this on a keychain when I bought it, expecting it to be my new "daily driver", but the fiddly NFC antenna, lack of NFC TOTP support, and my overall disappointment so far with BLE means it now it stays in my bag as an emergency backup.
+
+Additional information can be found here: https://github.com/Manouchehri/Feitian-MultiPass-FIDO-U2F
 
 ---------------
 ## <a name="secureclick"></a> VASCO DIGIPASS SecureClick
