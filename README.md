@@ -456,9 +456,9 @@ Additional information can be found here: https://github.com/Manouchehri/Feitian
 
 **Features:** U2F
 
-**Price:** £32.21 
+**Price:** $39.00 (US), £32.21 (UK)
 
-**Buy:** [Amazon UK](https://www.amazon.co.uk/VASCO-DATA-SECURITY-DIGIPASS-SecureClick/dp/B01M0DPK3K/ref=sr_1_1?ie=UTF8&qid=1503188198&sr=8-1&keywords=vasco+secureclick)
+**Buy:** [Amazon US](https://www.amazon.com/DIGIPASS-SecureClick-FIDO-U2F-Security/dp/B01M0DPK3K/ref=sr_1_1?ie=UTF8&qid=1505832277&sr=8-1&keywords=secureclick), [Amazon UK](https://www.amazon.co.uk/VASCO-DATA-SECURITY-DIGIPASS-SecureClick/dp/B01M0DPK3K/ref=sr_1_1?ie=UTF8&qid=1503188198&sr=8-1&keywords=vasco+secureclick)
 
 *Review Author: Brad Hill*
 
@@ -471,8 +471,6 @@ The responsiveness of this device when pairing and authenticating is much better
 The BLE pairing experience instructs you to enter a code "printed on the device".  The Feitian MultiPass has such a code, this device does not, but '0000' worked.
 
 The unit uses an included CR2012 battery, which should last at least two years when used for maximum of 10 authentications per day. The battery is replacable, and instructions for doing so are in the manual.
-
-These do not appear to be available for purchase in the United States.
 
 **Full Disclosure:** I received several of these devices for evalutation courtesy of VASCO.
 
