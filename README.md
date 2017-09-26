@@ -350,7 +350,7 @@ Why do I like them?
 Caveats?
 
 * Android only, for now.  All iPhones have the necessary hardware and there are some moves towards opening APIs for NFC in iOS 11, so I hope this will bode well for the reach of NFC U2F.  It would also be nice to see NFC readers integrated into laptops, as it would be cheap and easy to do so.
-* Registration difficulties.  Currently only https://m.facebook.com/ (not the app) on Chrome on Android has mobile-specific support for registering an NFC U2F authenticator.  On GitHub, you can force browse to the desktop site and make it work if you can manage to read the itty-bitty type.  Google supports authenticating with NFC to your account natively in Android, but at the time of this writing, you can only add a new U2F device to your account using desktop Chrome, which only supports USB.  So, you can use NFC with a multi-attachment device like the YubiKey NEO or Feitian MultiPass that was registered over USB first, but you can't use one of the card devices below with your Google account.  I hope they will fix this soon.  These devices have or are available with smartcard chip physical interface, but I don't have compatible reader hardware to test if this can be used to bypass this registration difficulty.
+* Registration difficulties.  https://m.facebook.com/ (not the app) and https://github.com work well, but while Google supports authenticating with NFC to your account natively in Android, at the time of this writing, you can only add a new U2F device to your account using desktop Chrome, which only supports USB.  So, you can use NFC with a multi-attachment device like the YubiKey NEO or Feitian MultiPass that was registered over USB first, but you can't use one of the card devices below with your Google account.  I hope they will fix this soon.  These devices have or are available with smartcard chip physical interface, but I don't have compatible reader hardware to test if this can be used to bypass this registration difficulty.
 
 
 ## <a name="fidesmo"></a> Fidesmo Card (Editor's Choice)
@@ -408,6 +408,8 @@ U2F over NFC works.  I haven't tried to do much else with this card.  The manufa
 Personally, I find BLE U2F to be painful. The pairing experience is not obvious, (it has to start from within an app, not like normal Bluetooth) needs to be done per-device, and requires entering a code.  Only Google has support for BLE authenticators, and I've found it consistently buggy on both Android and iOS.  I have to make multiple attempts to register a new BLE authenticator on Android, and have not successfully completed a registration / authentication on iOS with SmartLock yet with either style of device I own.  If you're hoping to deal with the USB-C issue of your new MacBook via BLE, don't get your hopes up there, either - Chrome desktop doesn't interact with BLE authenticators yet.  Finally, as of the time I tried, you can't add a BTLE (or NFC) key to your Google account directly, you can only authenticate with one you've registered over USB in Chrome on the desktop. So you need to register it with a PC/Mac before you can use it with your mobile device.
 
 I hope we'll see some rapid progress on this front and I can just keep a "magic button" on my keys in my pocket soon, that I press to authenticate anywhere without dongles or adapters, but I'm not holding my breath.
+
+**Update, 9/26/2017:**  The U2F experience in Android O, now provided through Google Play Services, is much improved for using BTLE and I've been able to successfully both register and authenticate with multiple types of BTLE authenticator to Facebook.
 
 -----------
 
@@ -468,7 +470,7 @@ This device is easy to use on a desktop system with the included USB adapter, an
 
 The responsiveness of this device when pairing and authenticating is much better than the Feitian MultiPass.
 
-The BLE pairing experience instructs you to enter a code "printed on the device".  The Feitian MultiPass has such a code, this device does not, but '0000' worked.
+The BLE pairing experience instructs you to enter a code "printed on the device".  The Feitian MultiPass has such a code, this device does not, but '000000' worked.
 
 The unit uses an included CR2012 battery, which should last at least two years when used for maximum of 10 authentications per day. The battery is replacable, and instructions for doing so are in the manual.
 
