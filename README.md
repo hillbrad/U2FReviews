@@ -507,15 +507,25 @@ Additional information can be found here: https://github.com/Manouchehri/Feitian
 
 *Review Author: Brad Hill*
 
-This is a Bluetooth Low-Energy U2F device.  It is about the diameter of a American Quarter, and about the thickness of an old UK Pound coin.  It comes with silicone keychain sleeves in three colors and a USB-A tranciever for use on desktop computers.
+This is a Bluetooth Low-Energy U2F device.  It is about the diameter of a American Quarter, and about the thickness of an UK Pound coin.  It comes with silicone keychain sleeves in three colors and a USB-A tranciever for use on desktop computers.
 
-This device is easy to use on a desktop system with the included USB adapter, and no additional pairing procedure is needed, but you need to keep the adapter inserted to use it, so it burns a port and is troublesome on the new MacBooks.  Exposing it this way as a USB device on a desktop system allows registering it with a Google or other account.  The BLE pairing and authentication worked for me on Android.  With Google SmartLock on iOS, I was able to pair the device and clicks are registered, but the iOS SmartLock app just gives me a 400 error page afterwards instead of completing the authentication. (I wasn't even able to get that far with the Feitian device, so I can't say if this is Google's fault or VASCO's, but I lean towards Google.)
+To register the device, you first need to attach the tranceiver to a desktop/laptop computer and run the DIGIPASS SecureClick Manager app from the Chrome app store to pair the tranceiver to your device. 
 
-The responsiveness of this device when pairing and authenticating is much better than the Feitian MultiPass.
+https://chrome.google.com/webstore/detail/digipass-secureclick-mana/gjbcaijefcocakonhdnfhomcnlcppbcg?hl=en  
 
-The BLE pairing experience instructs you to enter a code "printed on the device".  The Feitian MultiPass has such a code, this device does not, but '000000' worked.
+After it is paired, you can register it to your Google account with a desktop version of Chrome and then use it on Android or iOS (using Google's Smart Lock app).  I can confirm I have successfully used this device to enroll an account in Google Advanced Protection and then authenticate on an iPhone.
+
+For Facebook, you can use it standlone with a mobile device - registration and authentication are both supported natively at https://m.facebook.com/new_sec_settings/security_keys/  (The Facebook native apps don't support U2F yet and there is no way to use U2F on iOS with Facebook.)
+
+
 
 The unit uses an included CR2012 battery, which should last at least two years when used for maximum of 10 authentications per day. The battery is replacable, and instructions for doing so are in the manual.
+
+*Troubleshooting:* 
+
+The BLE pairing experience instructs you to enter a code "printed on the device".  There is no code, but '000000' (six zeros) works.
+
+On my USB-C MacBook Pro, I noticed that the USB-A tranceiver would only work when connected directly with an adapter cable.  When I plug it into the USB hub on my montior, it doesn't function.  This is sad because it makes it inconvenient to keep the tranceiver plugged in at my desk and use the same device for desktop + mobile.  (I leave other USB-A U2F keys permanently in my monitor hub and they work fine.)
 
 **Full Disclosure:** I received several of these devices for evalutation courtesy of VASCO.
 
