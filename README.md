@@ -1,7 +1,42 @@
 # U2FReviews
+
 Reviews of U2F devices
 
 Adam Langley got the ball rolling with his reviews [here](https://www.imperialviolet.org/2017/08/13/securitykeys.html), much of the content of which is reproduced here with his permission.  I've used a number of U2F devices Adam hasn't, and played around with NFC and Bluetooth Low Energy (BLE) connectivity, as well as multifunction devices, so at the request of some friends here's an expanded set of reviews.  It's set up as a GitHub repo and I encourage you to submit PRs with reviews of devices you've used that aren't listed here. *-Brad*
+
+-------
+
+Update: AGL has published some further test results for his series of U2F devices here: https://www.imperialviolet.org/2017/10/08/securitykeytest.html  
+
+He notes a number of implementation flaws or deviations from the standard. Mostly these are inconsequential to the ordinary use of the devices, but the KEY-ID and HyperFIDO devices have flaws that could allow a site to identify two different accounts at their service using the same hardware device, something which shouldn't be possible according to the FIDO specifications.
+
+-------
+
+## Google Advanced Protection:
+
+Google recently launched an advanced account security program. https://landing.google.com/advancedprotection/ It hardens your account against phishing and account recovery attacks and requires a U2F confirmation for every login.  You must register two security keys to enable this feature, and number of people have asked me which I recommend, or more simply, which ones work. I recommend the following:
+
+### For Android Users:
+
+Yubikey NEO + a second Yubikey NEO or a Yubikey 4C or 4C Nano if you want a USB-C device. 
+
+NFC has superior usability to BLE for mobile uses, doesn't need a batery and thus the devices can be more robust.  The TOTP features also available on the NEO or 4-series Yubikeys are a great addition, but you should have two devices that can do this, and save each seed to both in case one fails.  
+
+Unfortunately, you can't yet use an NFC-only device like the Fidesmo card because Google still only supports registering a new device over USB. The Feitian MultiPass works, but I don't recommend it because the NFC antenna is so bad.
+
+### For iOS Users:
+
+Yubico U2F Security Key + VASCO DigiPass SecureClick
+
+On iOS, you have to use BLE with the Google Smart Lock app to login.  The only device I've found that works with this is the VASCO DigiPass SecureClick.  The Feitian MultiPass should work in theory, and I've heard from people that got it to work, but I've tried to pair my MultiPass to three different iOS devices with no success.
+
+As a backup, the Yubico U2F only device is idea.
+
+### Use both Android and iOS?
+
+Yubikey NEO + VASCO DigiPass SecureClick.
+
+-------
 
 Table of Contents
 
@@ -178,6 +213,8 @@ In addition, whenever I remove this from my desktop computer, the computer reboo
 
 While this device is branded “KEY-ID”, I believe that the firmware is done by Feitian. There are similarities in certificate that match the Feitian device and, if you look up the FIDO certification, you find that Feitian registered a device called “KEY-ID FIDO® U2F Security Key”. Possibly Feitian decided against putting their brand on this.
 
+**Based on further testing from AGL (https://www.imperialviolet.org/2017/10/08/securitykeytest.html) this device is not recommended as the key handle allows a site to associate multiple accounts to the same physical device.**
+
 *Additional comments from Brad Hill:*
 
 I've used and given away a number of these because of their attractive price point and not heard of the reboot issues AGL describes above manifesting on MacBooks.
@@ -233,6 +270,8 @@ This HyperFIDO device is plastic so avoids the electrical issues of the KEY-ID a
 However, at least on the one that I received, the plastic USB part is only just small enough to fit into a USB socket. It takes a fair bit of force to insert and remove it. Also the end cap looks like it should be symmetrical and so able to go on either way around, but it doesn't quite work when upside down.
 
 Once inserted, pressing the button doesn't take too much force, but it's enough to make the device bend worryingly in the socket. It doesn't actually appear to be a problem, but it adds a touch of anxiety to each use. Overall, it's cheap and you'll know it.
+
+**Based on further testing from AGL (https://www.imperialviolet.org/2017/10/08/securitykeytest.html) this device is not recommended as the key handle allows a site to associate multiple accounts to the same physical device.**
 
 *Additional comments from Brad Hill:*
 
@@ -300,6 +339,10 @@ Regarding the packaging, the 4 has the standard tried-and-true Yubikey packaging
 I've had friends that purchased YubiKeys of these makes occasionally report that they don't work with U2F websites.  This has always been due to the fact that these devices have several ways in which they can be configured (proprietary OTP, U2F and PIV/CCID) and the U2F mode was somehow turned off when it shipped to them. You can use the [YubiKey Personalization Tool](https://www.yubico.com/support/knowledge-base/categories/articles/yubikey-personalization-tools/) to make sure the U2F attachment mode is enabled. (If you're generous enough to be giving away $40 devices, you might want to double-check this first.)
 
 Some people using the Nano have complained that it constantly blinks the LED at a slow interval when inserted.  If this bothers you, disabling the PIV/CCID attachment mode with the Personalization Tool will stop this, and the LED will only blink (rapidly) when waiting a U2F touch.
+
+*Infineon RSA Key Generation Flaw:*
+
+In October, it was revealed that Infineon TPM chips, upon which the Yubikey 4 series is based, had a serious flaw in RSA key generation that allows many keys to be factorable much more quickly than should be possible.  _This does not affect the U2F or TOTP functions of these devices at all._  If you use the PGP or PIV functions of your Yubikey 4 device, you should check here if yours is vulnerable.  Yubick offers a replacement to all customers impacted. https://www.yubico.com/keycheck/  
 
 **Full Disclosure:** I have at various times received complimentary Yubico devices from both Yubico and Google.
 
