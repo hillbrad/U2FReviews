@@ -45,6 +45,7 @@ Table of Contents
    * [Yubico U2F Security Key](#yubicou2f)
    * [Thetis U2F Security Key](#thetis)
    * [Feitian ePass](#epass)
+   * [Bluink](#bluink)
    * [U2F Zero](#zero)
    * [KEY-ID FIDO U2F Security Key](#keyid)
    * [HyperFIDO Mini](#hypermini)
@@ -154,6 +155,37 @@ I don't know what the opposite of a brown M&M is, but this security key is the o
 *Additional comments from Brad Hill:*
 
 The ePass I bought on Amazon works well over NFC, but the USB interface never worked for me.  There is Windows-only management software for these devices, but it is a bit rough for non-Chinese users, and I wasn't able to successfully enable the USB U2F onnectivity, so perhaps it is a manufacturing defect.  Supposedly these devices also have an HOTP applet and JavaCard CCID functionality available over USB, but I've not used it. It is not compatible with the Yubico NFC protocol for TOTP.
+
+----------
+
+## <a name="bluink"></a>Bluink Key
+![ePass](/bluink.jpeg)
+
+**Brand:** Bluink
+
+**Firmware:** N/A (running on phone)
+
+**Chip:** N/A (running on phone)
+
+**Connection:** USB-A
+
+**Features:** U2F, TOTP, passwords
+
+**Price:** $29.99
+
+**Buy:** [Bluink](https://bluink.ca/buy)
+
+*Review Author: AGL*
+
+The [Bluink Key](https://bluink.ca/key) is quite different from the others here in that it's a USB device that acts as a front for an app running on a nearby phone (connected over Bluetooth). The USB device can act as a U2F device, but also as a keyboard (for “typing” passwords) and even as a mouse (for controling a desktop mouse via touch input on a phone, if that's useful to you).
+
+I tested with the iOS app and the Bluetooth pairing worked well. The app requires a password, but can be configured to accept TouchID. Once paired, the USB dongle acts as a U2F device and creating a key makes the phone vibrate for confirmation. U2F keys can be named and are listed in the app. Authenticating with a key similarly prompts for confirmation via the app.
+
+When I first set it up, it was just for testing so I ignored the warning about creating a backup. That was a mistake. Once paired with the app, the USB dongle will reject future pairing requests unless you know the pairing code from the app. That makes a lot of sense—after all, it's a Bluetooth device that can act as a keyboard. But it does mean that if you delete the only copy of the pairing code by uninstalling the app (as I did), then the dongle cannot be used. So you should be sure to create a backup when prompted and to save it somewhere. (To restore, open it in the Files app and “share” with the Bluink app. You'll need the password in use when the backup was created.)
+
+I didn't find any issues when testing the U2F implementation, save for the fact that registration messages seem to require a bit to be set that Chrome sets, but which the spec says shouldn't be required. As a plus, since I believe that the U2F protocol is implemented in the app, that means that it can be easily fixed and updated. (I didn't test the signature generation as extensively as some of the other tokens since a full test requires around 1000 signatures and that wasn't really viable here.)
+
+As hinted, the Bluink key also allows passwords to be generated and stored, and supports TOTP. Both of these can be “typed” for you via the dongle. See the [user manual](https://bluink.ca/files/BluinkKeyUserGuide.pdf) for more details on the non-U2F aspects of this device.
 
 ----------
 
