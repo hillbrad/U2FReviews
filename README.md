@@ -4,14 +4,6 @@ Reviews of U2F devices
 
 Adam Langley got the ball rolling with his reviews [here](https://www.imperialviolet.org/2017/08/13/securitykeys.html), much of the content of which is reproduced here with his permission.  I've used a number of U2F devices Adam hasn't, and played around with NFC and Bluetooth Low Energy (BLE) connectivity, as well as multifunction devices, so at the request of some friends here's an expanded set of reviews.  It's set up as a GitHub repo and I encourage you to submit PRs with reviews of devices you've used that aren't listed here. *-Brad*
 
--------
-
-Update: AGL has published some further test results for his series of U2F devices here: https://www.imperialviolet.org/2017/10/08/securitykeytest.html  
-
-He notes a number of implementation flaws or deviations from the standard. Mostly these are inconsequential to the ordinary use of the devices, but the KEY-ID and HyperFIDO devices have flaws that could allow a site to identify two different accounts at their service using the same hardware device, something which shouldn't be possible according to the FIDO specifications.
-
--------
-
 ## Google Advanced Protection:
 
 Google recently launched an advanced account security program. https://landing.google.com/advancedprotection/ It hardens your account against phishing and account recovery attacks and requires a U2F confirmation for every login.  You must register two security keys to enable this feature, and number of people have asked me which I recommend, or more simply, which ones work. I recommend the following:
@@ -41,10 +33,12 @@ Yubikey NEO + VASCO DigiPass SecureClick.
 Table of Contents
 
 * [A note on U2F + TOTP devices](#multifunction)
+* [Summary table of implementation issues](#implissues)
 * [USB Devices](#usb)
    * [Yubico U2F Security Key](#yubicou2f)
    * [Thetis U2F Security Key](#thetis)
    * [Feitian ePass](#epass)
+   * [Bluink](#bluink)
    * [U2F Zero](#zero)
    * [KEY-ID FIDO U2F Security Key](#keyid)
    * [HyperFIDO Mini](#hypermini)
@@ -68,6 +62,29 @@ I am dilligent and always register my new seeds redundantly on two devices, so l
 If you are a sophisticated user of two-factor auth, it is well worth spending the extra money to get TOTP functionality even if you don't plan to use any of the other SmartCard or PGP features.
 
 -------------
+
+# <a name="implissues"></a> Implementation issues
+
+AGL wrote some of this up in [more detail](https://www.imperialviolet.org/2017/10/08/securitykeytest.html). The following table is a summary of how well various tokens implement the U2F spec. (Empty cells are ok, only exceptions are noted.)
+
+<table>
+  <tr><th>Device</th><th>Signature construction</th><th>Handle construction</th><th>Signature counter<sup>1</sup></th><th>Concurrent access<sup>2</sup></th><th>Notes</th></tr>
+
+  <tr><td>Yubico U2F</td><td></td><td></td><td>!</td><td></td><td></td></tr>
+  <tr><td>Thetis</td><td>!<sup>3</sup></td><td>?</td><td>!</td><td>!</td><td>Returns incorrect error for bad key handles and enters bad state, preventing full testing.</td></tr>
+  <tr><td>Feitain ePass</td><td>!<sup>3</sup></td><td></td><td>!</td><td>!</td><td>New version fixes most of these problems.</td></tr>
+  <tr><td>Bluink Key</td><td></td><td></td><td></td><td></td><td>Minor issue with parsing Register messages, not important in practice.</td></tr>
+  <tr><td>U2F Zero</td><td>?</td><td>?</td><td>!</td><td></td><td>Crashes during testing.</td></tr>
+  <tr><td>KEY-ID / HyperFIDO</td><td>!<sup>3</sup><sup>,4</sup></td><td>!<sup>5</sup></td><td>!</td><td>!</td><td></td></tr>
+  <tr><td>VASCO SecureClick</td><td></td><td></td><td>!</td><td></td><td></td></tr>
+</table>
+
+<sup>1</sup> Global signature counters are ineffective and provide a way to track tokens across sites. Signature counters should be omitted, per-key or, at least, bucketed.<br>
+<sup>2</sup> Tests whether the token correctly handles two applications trying to use it concurrently.<br>
+<sup>3</sup> Creates signatures with invalid, non-minimal integers.<br>
+<sup>4</sup> Creates signatures with invalid, negative integers.<br>
+<sup>5</sup> Handle format is bizzare and allows a site to identify all users with the same token.<br>
+
 # <a name="usb"></a> USB Devices
 
 ## <a name="yubicou2f"></a>Yubico U2F Security Key
@@ -154,6 +171,37 @@ I don't know what the opposite of a brown M&M is, but this security key is the o
 *Additional comments from Brad Hill:*
 
 The ePass I bought on Amazon works well over NFC, but the USB interface never worked for me.  There is Windows-only management software for these devices, but it is a bit rough for non-Chinese users, and I wasn't able to successfully enable the USB U2F onnectivity, so perhaps it is a manufacturing defect.  Supposedly these devices also have an HOTP applet and JavaCard CCID functionality available over USB, but I've not used it. It is not compatible with the Yubico NFC protocol for TOTP.
+
+----------
+
+## <a name="bluink"></a>Bluink Key
+![ePass](/bluink.jpeg)
+
+**Brand:** Bluink
+
+**Firmware:** N/A (running on phone)
+
+**Chip:** N/A (running on phone)
+
+**Connection:** USB-A
+
+**Features:** U2F, TOTP, passwords
+
+**Price:** $29.99
+
+**Buy:** [Bluink](https://bluink.ca/buy)
+
+*Review Author: AGL*
+
+The [Bluink Key](https://bluink.ca/key) is quite different from the others here in that it's a USB device that acts as a front for an app running on a nearby phone (connected over Bluetooth). The USB device can act as a U2F device, but also as a keyboard (for “typing” passwords) and even as a mouse (for controling a desktop mouse via touch input on a phone, if that's useful to you).
+
+I tested with the iOS app and the Bluetooth pairing worked well. The app requires a password, but can be configured to accept TouchID. Once paired, the USB dongle acts as a U2F device and creating a key makes the phone vibrate for confirmation. U2F keys can be named and are listed in the app. Authenticating with a key similarly prompts for confirmation via the app.
+
+When I first set it up, it was just for testing so I ignored the warning about creating a backup. That was a mistake. Once paired with the app, the USB dongle will reject future pairing requests unless you know the pairing code from the app. That makes a lot of sense—after all, it's a Bluetooth device that can act as a keyboard. But it does mean that if you delete the only copy of the pairing code by uninstalling the app (as I did), then the dongle cannot be used. So you should be sure to create a backup when prompted and to save it somewhere. (To restore, open it in the Files app and “share” with the Bluink app. You'll need the password in use when the backup was created.)
+
+I didn't find any issues when testing the U2F implementation, save for the fact that registration messages seem to require a bit to be set that Chrome sets, but which the spec says shouldn't be required. As a plus, since I believe that the U2F protocol is implemented in the app, that means that it can be easily fixed and updated. (I didn't test the signature generation as extensively as some of the other tokens since a full test requires around 1000 signatures and that wasn't really viable here.)
+
+As hinted, the Bluink key also allows passwords to be generated and stored, and supports TOTP. Both of these can be “typed” for you via the dongle. See the [user manual](https://bluink.ca/files/BluinkKeyUserGuide.pdf) for more details on the non-U2F aspects of this device.
 
 ----------
 
