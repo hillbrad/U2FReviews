@@ -22,7 +22,7 @@ Yubico U2F Security Key + VASCO DigiPass SecureClick
 
 On iOS, you have to use BLE with the Google Smart Lock app to login.  The only device I've found that works with this is the VASCO DigiPass SecureClick.  The Feitian MultiPass should work in theory, and I've heard from people that got it to work, but I've tried to pair my MultiPass to three different iOS devices with no success.
 
-As a backup, the Yubico U2F only device is idea.
+As a backup, the Yubico U2F only device is ideal.
 
 ### Use both Android and iOS?
 
