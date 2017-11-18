@@ -390,7 +390,7 @@ Some people using the Nano have complained that it constantly blinks the LED at 
 
 *Infineon RSA Key Generation Flaw:*
 
-In October, it was revealed that Infineon TPM chips, upon which the Yubikey 4 series is based, had a serious flaw in RSA key generation that allows many keys to be factorable much more quickly than should be possible.  _This does not affect the U2F or TOTP functions of these devices at all._  If you use the PGP or PIV functions of your Yubikey 4 device, you should check here if yours is vulnerable.  Yubick offers a replacement to all customers impacted. https://www.yubico.com/keycheck/  
+In October, it was revealed that Infineon TPM chips, upon which the Yubikey 4 series is based, had a serious flaw in RSA key generation that allows many keys to be factorable much more quickly than should be possible.  _This does not affect the U2F or TOTP functions of these devices at all._  If you use the PGP or PIV functions of your Yubikey 4 device, you should check here if yours is vulnerable.  Yubico offers a replacement to all customers impacted. https://www.yubico.com/keycheck/
 
 **Full Disclosure:** I have at various times received complimentary Yubico devices from both Yubico and Google.
 
