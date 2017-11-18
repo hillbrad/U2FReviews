@@ -6,7 +6,7 @@ Adam Langley got the ball rolling with his reviews [here](https://www.imperialvi
 
 ## Google Advanced Protection:
 
-Google recently launched an advanced account security program. https://landing.google.com/advancedprotection/ It hardens your account against phishing and account recovery attacks and requires a U2F confirmation for every login.  You must register two security keys to enable this feature, and number of people have asked me which I recommend, or more simply, which ones work. I recommend the following:
+Google recently launched an advanced account security program. https://landing.google.com/advancedprotection/ It hardens your account against phishing and account recovery attacks and requires a U2F confirmation when you login for the first time on a computer, browser, or device.  You must register two security keys to enable this feature, and number of people have asked me which I recommend, or more simply, which ones work. I recommend the following:
 
 ### For Android Users:
 
