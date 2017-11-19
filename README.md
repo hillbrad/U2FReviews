@@ -22,7 +22,7 @@ Yubico U2F Security Key + VASCO DigiPass SecureClick
 
 On iOS, you have to use BLE with the Google Smart Lock app to login.  The only device I've found that works with this is the VASCO DigiPass SecureClick.  The Feitian MultiPass should work in theory, and I've heard from people that got it to work, but I've tried to pair my MultiPass to three different iOS devices with no success.
 
-As a backup, the Yubico U2F only device is idea.
+As a backup, the Yubico U2F only device is ideal.
 
 ### Use both Android and iOS?
 
@@ -390,7 +390,7 @@ Some people using the Nano have complained that it constantly blinks the LED at 
 
 *Infineon RSA Key Generation Flaw:*
 
-In October, it was revealed that Infineon TPM chips, upon which the Yubikey 4 series is based, had a serious flaw in RSA key generation that allows many keys to be factorable much more quickly than should be possible.  _This does not affect the U2F or TOTP functions of these devices at all._  If you use the PGP or PIV functions of your Yubikey 4 device, you should check here if yours is vulnerable.  Yubick offers a replacement to all customers impacted. https://www.yubico.com/keycheck/  
+In October, it was revealed that Infineon TPM chips, upon which the Yubikey 4 series is based, had a serious flaw in RSA key generation that allows many keys to be factorable much more quickly than should be possible.  _This does not affect the U2F or TOTP functions of these devices at all._  If you use the PGP or PIV functions of your Yubikey 4 device, you should check here if yours is vulnerable.  Yubico offers a replacement to all customers impacted. https://www.yubico.com/keycheck/
 
 **Full Disclosure:** I have at various times received complimentary Yubico devices from both Yubico and Google.
 
