@@ -325,6 +325,10 @@ Once inserted, pressing the button doesn't take too much force, but it's enough 
 
 There is funny stuff going on with how the several of these I have present their attestation.  Every time the device is registered, they generate a unique device name as part of the certificate.  This has the upside of not presenting a cross-domain tracking identifier, but it tells me that the attestation private key is in the device somewhere. (or it may be generating a new random attestation key and cert every time, I don't recall)  Anyway, they seem fine for consumer use - I've used one I leave installed in my monitor's USB hub on a daily basis for almost a year now.  But I wouldn't recommend these if you care about checking attestations.
 
+*Additional comments from Harald Wagener:*
+
+The housing plastics are so soft that putting them on a keyring broke the hole left for that purpose. Even the small threaded loop that is shipped with the key will saw through the housing body over time.
+
 --------------
 
 ## <a name="plugup"></a> Plug-Up Card Key
@@ -578,5 +582,9 @@ The BLE pairing experience instructs you to enter a code "printed on the device"
 On my USB-C MacBook Pro, I noticed that the USB-A tranceiver would only work when connected directly with an adapter cable.  When I plug it into the USB hub on my montior, it doesn't function.  This is sad because it makes it inconvenient to keep the tranceiver plugged in at my desk and use the same device for desktop + mobile.  (I leave other USB-A U2F keys permanently in my monitor hub and they work fine.)
 
 **Full Disclosure:** I received several of these devices for evalutation courtesy of VASCO.
+
+*Additional comments by Harald Wagener:*
+
+Considering that the digipass uses a disposable watch battery, the power drain seems completely absurd for a device I am supposed to be using all day for two years. Also, the blue ring around the token actually is a thin, flexible silicone casing (the box comes with two additional, differently colored silicone casings),  and as it is open on both sides, I would say the chances of the token getting lost if you actually put it on a key ring is very high.
 
 ----------
