@@ -583,7 +583,7 @@ On my USB-C MacBook Pro, I noticed that the USB-A tranceiver would only work whe
 
 **Full Disclosure:** I received several of these devices for evalutation courtesy of VASCO.
 
-*Additional comments by Harald Wagener:*
+*Additional comments from Harald Wagener:*
 
 Considering that the digipass uses a disposable watch battery, the power drain seems completely absurd for a device I am supposed to be using all day for two years. Also, the blue ring around the token actually is a thin, flexible silicone casing (the box comes with two additional, differently colored silicone casings),  and as it is open on both sides, I would say the chances of the token getting lost if you actually put it on a key ring is very high.
 
