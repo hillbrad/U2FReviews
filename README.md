@@ -12,7 +12,7 @@ Google recently launched an advanced account security program. https://landing.g
 
 Yubikey NEO + a second Yubikey NEO or a Yubikey 4C or 4C Nano if you want a USB-C device. 
 
-NFC has superior usability to BLE for mobile uses, doesn't need a batery and thus the devices can be more robust.  The TOTP features also available on the NEO or 4-series Yubikeys are a great addition, but you should have two devices that can do this, and save each seed to both in case one fails.  
+NFC has superior usability to BLE for mobile uses, doesn't need a battery and thus the devices can be more robust.  The TOTP features also available on the NEO or 4-series Yubikeys are a great addition, but you should have two devices that can do this, and save each seed to both in case one fails.  
 
 Unfortunately, you can't yet use an NFC-only device like the Fidesmo card because Google still only supports registering a new device over USB. The Feitian MultiPass works, but I don't recommend it because the NFC antenna is so bad.
 
