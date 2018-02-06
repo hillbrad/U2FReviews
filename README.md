@@ -325,6 +325,10 @@ Once inserted, pressing the button doesn't take too much force, but it's enough 
 
 There is funny stuff going on with how the several of these I have present their attestation.  Every time the device is registered, they generate a unique device name as part of the certificate.  This has the upside of not presenting a cross-domain tracking identifier, but it tells me that the attestation private key is in the device somewhere. (or it may be generating a new random attestation key and cert every time, I don't recall)  Anyway, they seem fine for consumer use - I've used one I leave installed in my monitor's USB hub on a daily basis for almost a year now.  But I wouldn't recommend these if you care about checking attestations.
 
+*Additional comments from Harald Wagener:*
+
+The housing plastics are so soft that putting them on a keyring broke the hole left for that purpose. Even the small threaded loop that is shipped with the key will saw through the housing body over time.
+
 --------------
 
 ## <a name="plugup"></a> Plug-Up Card Key
@@ -557,7 +561,7 @@ Additional information can be found here: https://github.com/Manouchehri/Feitian
 
 *Review Author: Brad Hill*
 
-This is a Bluetooth Low-Energy U2F device.  It is about the diameter of a American Quarter, and about the thickness of an UK Pound coin.  It comes with silicone keychain sleeves in three colors and a USB-A tranciever for use on desktop computers.
+This is a Bluetooth Low-Energy U2F device.  It is about the diameter of a American Quarter, and about the thickness of an UK Pound coin.  It comes with silicone keychain sleeves in three colors and a USB-A tranciever for use on desktop computers. I carried it on my key ring for a few weeks, and it did pop out once while fiddling with it in my pocket, but does stay relatively securely attached.
 
 To register the device, you first need to attach the tranceiver to a desktop/laptop computer and run the DIGIPASS SecureClick Manager app from the Chrome app store to pair the tranceiver to your device. 
 
@@ -567,9 +571,7 @@ After it is paired, you can register it to your Google account with a desktop ve
 
 For Facebook, you can use it standlone with a mobile device - registration and authentication are both supported natively at https://m.facebook.com/new_sec_settings/security_keys/  (The Facebook native apps don't support U2F yet and there is no way to use U2F on iOS with Facebook.)
 
-
-
-The unit uses an included CR2012 battery, which should last at least two years when used for maximum of 10 authentications per day. The battery is replacable, and instructions for doing so are in the manual.
+The unit uses an included CR2012 battery, which the manufacturer says should last at least two years when used for maximum of 10 authentications per day, though I have received some user reports of substantially shorter battery life. The battery is replacable, and instructions for doing so are in the manual.
 
 *Troubleshooting:* 
 
