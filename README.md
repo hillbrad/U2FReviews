@@ -445,6 +445,7 @@ Why do I like them?
 Caveats?
 
 * Android only, for now.  All iPhones have the necessary hardware and there are some moves towards opening APIs for NFC in iOS 11, so I hope this will bode well for the reach of NFC U2F.  It would also be nice to see NFC readers integrated into laptops, as it would be cheap and easy to do so.
+* NFC seems to be common on Android phones, dating back to Android 4.4, but is much less commonly supported on tablets, even high-end devices.  Desktop/laptop support for NFC is basically non-existent. iPhone's >=5 have the necessary hardware but Apple still doesn't support U2F natively or give apps sufficient access to the hardware to implement it themselves. 
 * Registration difficulties.  https://m.facebook.com/ (not the app) and https://github.com work well, but while Google supports authenticating with NFC to your account natively in Android, at the time of this writing, you can only add a new U2F device to your account using desktop Chrome, which only supports USB.  So, you can use NFC with a multi-attachment device like the YubiKey NEO or Feitian MultiPass that was registered over USB first, but you can't use one of the card devices below with your Google account.  I hope they will fix this soon.  These devices have or are available with smartcard chip physical interface, but I don't have compatible reader hardware to test if this can be used to bypass this registration difficulty.
 
 
