@@ -358,7 +358,7 @@ The key I used sucessfully in my Chromebook at that time hasn't worked for sever
 
 -------------
 
-## <a name="yubikey"></a> YubiKey 4, 4C and Nano
+## <a name="yubikey"></a> YubiKey 4, 4C, Nano, and 4C-Nano-C
 ![4 and nano](/4-nano.jpg)
 ![4C](/4c.jpeg)
 
@@ -368,7 +368,7 @@ The key I used sucessfully in my Chromebook at that time hasn't worked for sever
 
 **Chip:** NXP
 
-**Connection:** USB-A (4 and Nano), USB-C (4C)
+**Connection:** USB-A (4 and Nano), USB-C (4C, 4C-nano)
 
 **Features:** U2F, TOTP, Yubico OTP, PGP, PIV/CCID
 
@@ -385,6 +385,8 @@ I'll review these together as they are essentially the same device in different 
 I'm also interested in trying out the PGP features of the key for code signing on GitHub, though I otherwise try to avoid PGP.
 
 Regarding the packaging, the 4 has the standard tried-and-true Yubikey packaging.  The 4C is a bit thicker.  I have heard reports that the first generation of the 4C devices do not withstand everyday carry on a keychain; hopefully current models are more durable. (I don't have one.) The Nano is a great choice to leave in your computer, monitor or other hub full-time, easily accessible with just a tap.  I tried carrying a Nano with a small USB-C adapter on my keys for a few weeks, but the tiny bit of metal where a nylon camera-loop attachment goes tore out.  It would be a big bummer to lose a $50 device and the associated credentials this way, so I can't recommend the Nano as an everyday carry device.
+
+The 4C Nano is great for laptops that have only USB-C ports and can sit unobtrusively in the port all the time. My only issue is that there are touch plates on both the top and bottom of the device.  In the summer, resting my laptop on bare legs while wearing shorts, the bottom touch plate kept getting triggered.  A bit of nail polish fixed that.
 
 *Troubleshooting:* 
 
