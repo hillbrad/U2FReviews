@@ -224,7 +224,7 @@ As hinted, the Bluink key also allows passwords to be generated and stored, and 
 
 *Review Author: AGL*
 
-It's the only token on Amazon that has open source firmware (and hardware designs), and that was worth waiting for. It's also the cheapest of all the options here.
+It's the first token on Amazon that had open source firmware (and hardware designs), and that was worth waiting for. It's also the cheapest of all the options here.
 
 Sadly, I have to report that I can't quite recommend it because, in my laptop (a Chromebook Pixel), it's not thick enough to sit in the USB port correctly: Since it only has the “tongue” of a USB connector, it can move around in the port a fair bit. That's true of the other tokens too, but with the U2F Zero, unless I hold it just right, it fails to make proper contact. Since operating it requires pressing the button, it's almost unusable in my laptop.
 
