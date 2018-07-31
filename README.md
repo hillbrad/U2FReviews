@@ -72,7 +72,7 @@ AGL wrote some of this up in [more detail](https://www.imperialviolet.org/2017/1
 
   <tr><td>Yubico U2F</td><td></td><td></td><td>!</td><td></td><td></td></tr>
   <tr><td>Thetis</td><td>!<sup>3</sup></td><td>?</td><td>!</td><td>!</td><td>Returns incorrect error for bad key handles and enters bad state, preventing full testing.</td></tr>
-  <tr><td>Feitain ePass</td><td>!<sup>3</sup></td><td></td><td>!</td><td>!</td><td>New version fixes most of these problems.</td></tr>
+  <tr><td>Feitian ePass</td><td>!<sup>3</sup></td><td></td><td>!</td><td>!</td><td>New version fixes most of these problems.</td></tr>
   <tr><td>Bluink Key</td><td></td><td></td><td></td><td></td><td>Minor issue with parsing Register messages, not important in practice.</td></tr>
   <tr><td>U2F Zero</td><td>?</td><td>?</td><td>!</td><td></td><td>Crashes during testing.</td></tr>
   <tr><td>KEY-ID / HyperFIDO</td><td>!<sup>3</sup><sup>,4</sup></td><td>!<sup>5</sup></td><td>!</td><td>!</td><td></td></tr>
