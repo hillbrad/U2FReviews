@@ -85,6 +85,10 @@ AGL wrote some of this up in [more detail](https://www.imperialviolet.org/2017/1
 <sup>4</sup> Creates signatures with invalid, negative integers.<br>
 <sup>5</sup> Handle format is bizzare and allows a site to identify all users with the same token.<br>
 
+# A note on Google's Titan keys
+
+Google has started selling a kit for Advanced Protection, containing two security keys under their own Titan brand.  https://store.google.com/us/product/titan_security_key_kit  These are the same hardware as the Feitian ePass and MultiPass, with Google provided firmware. I do not have a set to evaluate.  My speculation is that the Google firmware has been more carefully tested for adherence to FIDO privacy principles than previous Feitian firmware, given Google's special concern with this.  They also appear to have removed the badly implemented or superfluous features of the Feitian versions - namely the TOTP, PIV and other smartcard features of the ePass seem to be gone, and I also note that there is no mention in their documentation of NFC for the teardrop key. Perhaps, as I found, the antenna was just too bad for Google to feel comfortable attaching their brand to that feature. Or maybe it is still there and just not in the marketing copy? I'm glad that Google is making it easy to find and purchase these devices under their well-known and trusted brand, but I'm sticking with my recommendation to readers of this guide of Yubico hardware for the better reliabiblty and quality control I've observed, plus the great TOTP features. -Brad Hill  
+
 # <a name="usb"></a> USB Devices
 
 ## <a name="yubicou2f"></a>Yubico U2F Security Key
